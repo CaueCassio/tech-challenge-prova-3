@@ -14,4 +14,8 @@ app.use('/auth', authRoutes);
 app.use('/vehicles', vehicleRoutes);
 app.use('/purchase', purchaseRoutes);
 
+app.get('/', (req, res) => {
+    res.send('API funcionando');
+  });
+  
 module.exports = app;
