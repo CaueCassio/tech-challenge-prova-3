@@ -1,0 +1,19 @@
+FROM node:14
+
+ARG MONGO_URI
+ARG JWT_SECRET
+
+ENV MONGO_URI=${MONGO_URI}
+ENV JWT_SECRET=${JWT_SECRET}
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
